@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gestor de Empresas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+            <div class="container-fluid">
+                  <a class="navbar-brand" href="index.html">Sistema de Gestión de Clientes</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav mx-auto">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Empresas</a>  
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Pedidos</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Reportes</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <a class="nav-link" href="Signin.html">Cerrar sesion</a>
+            </div>
+        </nav>
+        
+        <br>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-3 text-start">
+                    <input type="text" class="form-control" id="inpBuscar" aria-describedby="empresaBuscar" placeholder="Buscar una Empresa">
+                </div>
+                <div class="col-3 text-start">
+                    <button class="btn btn-secondary">Buscar</button>
+                </div>
+                <div class="col-6 text-end">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addEmpresa">
+                        Agregar Empresa
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                          <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+                        </svg>                        
+                    </button>
+                </div>
+                
+            </div>
+            <br>
+
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class=" table-primary ">
+                        <tr>
+                            <th class="text-center">No.</td>
+                            <th>Nombre Empresa</td>
+                            <th>Nombre de Enlace</td>
+                            <th>Teléfono</td>
+                            <th>Editar</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="" id="registro1">
+                            <td >1</td>
+                            <td>Softtek</td>
+                            <td>Antonio Acevedo</td>
+                            <td>
+                                7771148091
+                            </td>
+                            <td class="">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    Editar
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                          <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                        </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="" id="registro2">
+                            <td >2</td>
+                            <td>Ithera</td>
+                            <td>Alberto Prealta</td>
+                            <td>
+                                7774086876
+                            </td>
+                            <td class="">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    Editar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                      <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="" id="registro3">
+                            <td >3</td>
+                            <td>WorldCorp</td>
+                            <td>Daniel Hernández</td>
+                            <td>
+                                7771508901
+                            </td>
+                            <td class="">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    Editar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                      <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="" id="registro4">
+                            <td >4</td>
+                            <td>BenQ</td>
+                            <td>Raul Jimenez</td>
+                            <td>
+                                7774307777
+                            </td>
+                            <td class="">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    Editar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                      <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="" id="registro5">
+                            <td >5</td>
+                            <td>Mobo</td>
+                            <td>Carlos González</td>
+                            <td>
+                                7770108575
+                            </td>
+                            <td class="">
+                                <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editModal">
+                                    Editar
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                                      <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                    </svg>
+                                </button>
+                            </td>
+                        </tr>        
+                    </tbody>
+                </table>
+            </div>
+
+            <br>
+            
+            <nav aria-label="Page navigation example">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>        
+
+        </div>
+
+
+        <div class="modal fade" id="addEmpresa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Empresa</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="row me-3 ms-3">
+                    <label for="inputNickname" class="form-label">Nombre de la Empresa: </label>
+                    <input type="email" class="form-control" id="inputNombreEmpresa" aria-describedby="emailHelp">
+                </div>
+                <div class="row me-3 ms-3">
+                    <label for="inputName" class="form-label">Nombre del Enlace: </label>
+                    <input type="email" class="form-control" id="inputNombreEnlace" aria-describedby="emailHelp">
+                </div>
+                <div class="row me-3 ms-3">
+                    <label for="inputName" class="form-label">Telefono: </label>
+                    <input type="number" class="form-control" id="inputTelefono" aria-describedby="emailHelp">
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="btnDelete" type="button" class="text-start btn btn-warning">Cancelar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button id="btnSave" type="button" class="btn btn-primary" data-bs-dismiss="modal">Agregar usuario</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
